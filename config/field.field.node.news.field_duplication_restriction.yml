@@ -1,0 +1,29 @@
+uuid: a1e01cca-ab88-4457-b1f8-eec31792736d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duplication_restriction
+    - node.type.news
+  module:
+    - allow_only_one
+third_party_settings:
+  allow_only_one:
+    body: 0
+    field_news_category: 1
+    field_news_images: 0
+    title: 1
+    case_sensitive: '0'
+    limit_validation_to_published: 0
+id: node.news.field_duplication_restriction
+field_name: field_duplication_restriction
+entity_type: node
+bundle: news
+label: 'Duplication Restriction'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: allow_only_one

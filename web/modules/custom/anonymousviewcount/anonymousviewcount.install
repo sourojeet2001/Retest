@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the AnonymousViewCount module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function anonymousviewcount_schema() {
+  $schema['nodeviewcount'] = [
+    'description' => 'The count views of node for every user.',
+    'fields' => [
+      'nid' => [
+        'description' => 'The node ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'timestamp' => [
+        'description' => 'The Unix timestamp when the node was view.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'count' => [
+        'description' => 'Count of node view',
+        'type' => 'int',
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['nid'],
+  ];
+  return $schema;
+}

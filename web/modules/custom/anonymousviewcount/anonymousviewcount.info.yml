@@ -1,0 +1,5 @@
+name: 'AnonymousViewCount'
+type: module
+description: 'To count node view of anonymous users.'
+package: Custom
+core_version_requirement: ^10

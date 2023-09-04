@@ -1,0 +1,23 @@
+uuid: 58b78fc2-f208-4b98-b059-89a1bccb3cff
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - field_permissions
+    - node
+id: editor
+label: Editor
+weight: 5
+is_admin: null
+permissions:
+  - 'edit any news content'
+  - 'edit field_publish_date'
+  - 'use editorial transition back_to_review'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition send_for_review'
+  - 'view any unpublished content'
