@@ -14,9 +14,11 @@ dependencies:
   module:
     - allow_only_one
     - content_moderation
+    - datetime
     - image
     - maxlength
     - path
+    - publication_date
     - text
 id: node.news.default
 targetEntityType: node
@@ -48,7 +50,7 @@ content:
     third_party_settings: {  }
   field_news_category:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -64,9 +66,15 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_publish_date:
+    type: datetime_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -82,6 +90,12 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  published_at:
+    type: publication_date_timestamp
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -119,5 +133,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_publish_date: true
+hidden: {  }

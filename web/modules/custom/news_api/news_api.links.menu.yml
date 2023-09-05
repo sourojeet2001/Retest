@@ -1,0 +1,4 @@
+news_api.settings:
+  title: APIAuthSettings
+  route_name: news_api.settings
+  weight: 10

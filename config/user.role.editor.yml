@@ -8,16 +8,30 @@ dependencies:
   module:
     - content_moderation
     - field_permissions
+    - flag
     - node
+    - system
+    - toolbar
 id: editor
 label: Editor
 weight: 5
 is_admin: null
 permissions:
+  - 'access content'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create field_publish_date'
+  - 'create news content'
   - 'edit any news content'
   - 'edit field_publish_date'
+  - 'edit own field_publish_date'
+  - 'flag bookmark'
+  - 'unflag bookmark'
   - 'use editorial transition back_to_review'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use editorial transition send_for_review'
   - 'view any unpublished content'
+  - 'view field_publish_date'
+  - 'view own field_publish_date'
+  - 'view own unpublished content'

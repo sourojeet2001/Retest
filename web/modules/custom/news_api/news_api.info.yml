@@ -1,0 +1,5 @@
+name: 'News API'
+type: module
+description: 'Exposes all news data as an API.'
+package: Custom
+core_version_requirement: ^10

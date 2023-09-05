@@ -1,0 +1,5 @@
+name: 'Feature Removal'
+type: module
+description: 'Automatically removes featured news after 7 days.'
+package: Custom
+core_version_requirement: ^10
