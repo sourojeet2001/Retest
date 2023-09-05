@@ -1,0 +1,25 @@
+uuid: 442540ab-57e4-4171-966c-81d7d77636bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.term_list
+  module:
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__term_list_block_1
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:term_list-block_1'
+settings:
+  id: 'views_block:term_list-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

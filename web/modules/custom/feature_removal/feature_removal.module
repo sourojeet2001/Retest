@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Feature Removal module.
+ */
+
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * Implements hook_cron().
+ */
+function feature_removal_cron() {
+  // Running cron only at 2 AM.
+  if (date('G', time()) == 2) {
+    $currentDateTime = new DrupalDateTime();
+    // Calculate the date one week ago.
+    $oneWeekAgo = clone $currentDateTime;
+    $oneWeekAgo->modify('-7 days');
+    $oneWeekAgoDate = $oneWeekAgo->format('Y-m-d');
+    // Query nodes that meet the deletion criteria.
+    $query = \Drupal::entityQuery('node')
+      ->accessCheck(FALSE)
+      ->condition('type', 'news')
+      ->condition('status', 1)
+      ->condition('field_publish_date', $oneWeekAgoDate, '<');
+    $node_ids = $query->execute();
+    if (!empty($node_ids)) {
+      foreach ($node_ids as $nid) {
+        // Unsetting Featured flag from contents.
+        $db = \Drupal::database();
+        $db->delete('flagging')
+          ->condition('entity_id', $nid)
+          ->execute();
+        $db->delete('flag_counts')
+          ->condition('entity_id', $nid)
+          ->execute();
+      }
+    }
+  }
+}

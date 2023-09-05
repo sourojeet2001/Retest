@@ -1,0 +1,38 @@
+uuid: 53f268cd-a95d-4509-8e22-40d9f4b36636
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_images
+    - node.type.news
+  module:
+    - image
+id: node.news.field_news_images
+field_name: field_news_images
+entity_type: node
+bundle: news
+label: 'News Images'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'News Images'
+  file_extensions: 'png jpg jpeg'
+  max_filesize: '5 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

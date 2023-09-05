@@ -1,0 +1,15 @@
+news_api.newsdata:
+  path: '/newsdata'
+  defaults:
+    _title: 'Newsdata'
+    _controller: '\Drupal\news_api\Controller\NewsApiController::buildResult'
+  requirements:
+    _permission: 'access content'
+
+news_api.settings:
+  path: '/admin/config/system/news_api/settings'
+  defaults:
+    _title: 'APIAuthSettings'
+    _form: 'Drupal\news_api\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

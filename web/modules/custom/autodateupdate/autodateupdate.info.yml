@@ -1,0 +1,5 @@
+name: 'AutoDateUpdate'
+type: module
+description: 'Automatically updates publication date on approval.'
+package: Custom
+core_version_requirement: ^10

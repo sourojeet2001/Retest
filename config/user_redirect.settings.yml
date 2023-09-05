@@ -1,0 +1,32 @@
+login:
+  authenticated:
+    redirect_url: ''
+    weight: '-10'
+  content_editor:
+    redirect_url: ''
+    weight: '-10'
+  administrator:
+    redirect_url: ''
+    weight: '-10'
+  reporter:
+    redirect_url: /reporter-dashboard
+    weight: '-10'
+  editor:
+    redirect_url: /editor-dashboard
+    weight: '-10'
+logout:
+  authenticated:
+    redirect_url: ''
+    weight: '-10'
+  content_editor:
+    redirect_url: ''
+    weight: '-10'
+  administrator:
+    redirect_url: ''
+    weight: '-10'
+  reporter:
+    redirect_url: ''
+    weight: '-10'
+  editor:
+    redirect_url: ''
+    weight: '-10'

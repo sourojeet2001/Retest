@@ -1,0 +1,35 @@
+uuid: 49e13fbd-70fe-4472-a004-aefb530bd389
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - flag_bookmark
+_core:
+  default_config_hash: vuzrLaRZ3xV-FmT127t2gLy_p8JDLMWtsKsnCwdWR2Y
+id: bookmark
+label: Featured
+bundles:
+  - news
+entity_type: node
+global: false
+flag_short: 'Add to Featured'
+flag_long: 'Add this news as featured'
+flag_message: 'This news has been added as featured.'
+unflag_short: 'Remove from featured'
+unflag_long: 'Remove this news from featured'
+unflag_message: 'This post has been removed from featured'
+unflag_denied_text: ''
+weight: 0
+flag_type: 'entity:node'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

@@ -1,0 +1,24 @@
+<?php
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_update().
+ */
+function autodateupdate_entity_update(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface && $entity->bundle() == 'news') {  
+      $moderation_state = $entity->get('moderation_state')->first();
+      if ($moderation_state) {
+        $state = $moderation_state->getValue()['value'];
+        if ($state === 'published') {
+          $currentDate = new DrupalDateTime();
+          $publishDate = (string) $currentDate->format('Y-m-d');
+          $entity->set('field_publish_date', $publishDate);
+          $entity->save();
+        }
+      }
+    
+  }
+}
